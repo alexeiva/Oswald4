@@ -57,6 +57,12 @@ jobs:
 
     - name: Build font
       run: make build
+    - name: Generate specimen images
+      run: |
+      source venv/bin/activate
+      python3 documentation/image1.py --output documentation/image1.png
+      python3 documentation/image2.py --output documentation/image2.png
+      
     - name: Check with fontspector
       run: make test
       continue-on-error: true
